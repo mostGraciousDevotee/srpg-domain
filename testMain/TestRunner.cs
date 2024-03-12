@@ -13,7 +13,13 @@ class TestRunner
     {
         foreach (BaseTest test in _tests)
         {
-            test.Test();
+            if (test.Test() != true)
+            {
+                Console.WriteLine(test.ToString() + " run failed");
+                return;
+            }
         }
+
+        Console.WriteLine("All test passed! Congratulations!");
     }
 }

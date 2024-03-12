@@ -7,17 +7,11 @@ class Program
     
     static void Main()
     {
-        Console.WriteLine("Hello world!");
+        var testRunner = new TestRunner();
+        var unitTest = new UnitTest();
 
-        var adam = new Unit(1, "Adam");
+        testRunner.AddTest(unitTest);
 
-        if (adam != null)
-        {
-            Console.WriteLine("Succesfully created " + adam.Name + " #" + adam.ID);
-        }
-
-        // var testRunner = new TestRunner();
-
-        // testRunner.Run();
+        testRunner.Run();
     }
 }
