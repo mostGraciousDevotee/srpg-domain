@@ -1,0 +1,82 @@
+﻿using Entity;
+using SRPGSys;
+
+namespace SRPGSysImp
+{
+    public class TurnSys : ITurnSys
+    {
+        const int ReadinessPoint = 100;
+        int _processGuard;
+        
+        IUnit? _currentUnit;
+        List<IUnit> _unitList = new List<IUnit>();
+        Queue<IUnit> _unitQueue = new Queue<IUnit>();
+        
+        public IUnit Current => throw new NotImplementedException();
+
+        public void AddUnit(IUnit unit)
+        {
+            _unitList.Add(unit);
+        }
+
+        public void End()
+        {
+            _currentUnit?.GetComponent<IReadiness>().Reset();
+            ProcessUnitTurn();
+        }
+
+        public void Start()
+        {
+            ProcessUnitTurn();
+        }
+
+        void ProcessUnitTurn()
+        {
+            if (UnitInQueue())
+            {
+                _processGuard = 0;
+                _currentUnit = _unitQueue.Dequeue();
+
+                // TODO:  Notify UI for active unit;
+            }
+            else
+            {
+                _processGuard++;
+                ProcessGuard();
+                ProcessUnitTurn();
+            }
+        }
+
+        bool UnitInQueue()
+        {
+            return _unitQueue.TryPeek(out IUnit? unit);
+        }
+
+        void ProcessGuard()
+        {
+            if (_processGuard >= 100)
+            {
+                throw new Exception("TurnSys Process overflow");
+            }
+        }
+
+        void UpdateUnitReadiness()
+        {
+            foreach (IUnit unit in _unitList)
+            {
+                var readinessComponent = unit.GetComponent<IReadiness>();
+                readinessComponent.UpdateReadiness();
+
+                if (readinessComponent.Readiness >= ReadinessPoint)
+                {
+                    Enqueue(unit);
+                }
+            }
+        }
+
+        void Enqueue(IUnit unit)
+        {
+            _unitQueue.Enqueue(unit);
+        }
+    }
+}

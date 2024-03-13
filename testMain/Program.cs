@@ -1,5 +1,4 @@
 ﻿using Test;
-using EntityImp;
 
 class Program
 {
@@ -9,9 +8,11 @@ class Program
     {
         var testRunner = new TestRunner();
         var unitTest = new UnitTest();
+        var readinessTest = new ReadinessTest();
 
         testRunner.AddTest(unitTest);
-
+        testRunner.AddTest(readinessTest);
+        
         testRunner.Run();
     }
 }

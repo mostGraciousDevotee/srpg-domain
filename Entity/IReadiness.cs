@@ -4,5 +4,8 @@ namespace Entity
     {
         int Speed {get; }
         int Readiness {get; }
+
+        void UpdateReadiness();
+        void Reset();
     }
 }

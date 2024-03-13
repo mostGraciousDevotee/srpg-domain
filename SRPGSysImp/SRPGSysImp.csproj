@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
-    <ProjectReference Include="..\EntityImp\EntityImp.csproj" />
-    <ProjectReference Include="..\SRPGSysImp\SRPGSysImp.csproj" />
+    <ProjectReference Include="..\SRPGSys\SRPGSys.csproj" />
+    <ProjectReference Include="..\Entity\Entity.csproj" />
   </ItemGroup>
 
   <PropertyGroup>
