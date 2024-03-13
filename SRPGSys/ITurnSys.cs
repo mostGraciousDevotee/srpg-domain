@@ -4,7 +4,9 @@ namespace SRPGSys
 {
     public interface ITurnSys
     {
-        IUnit Current {get; }
+        event Action<int, string> UnitActive;
+        
+        IUnit? Current {get; }
 
         void AddUnit(IUnit unit);
         void Start();

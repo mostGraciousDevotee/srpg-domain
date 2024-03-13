@@ -12,7 +12,8 @@ namespace SRPGSysImp
         List<IUnit> _unitList = new List<IUnit>();
         Queue<IUnit> _unitQueue = new Queue<IUnit>();
         
-        public IUnit Current => throw new NotImplementedException();
+        public event Action<int, string>? UnitActive;
+        public IUnit? Current => _currentUnit;
 
         public void AddUnit(IUnit unit)
         {
@@ -43,6 +44,7 @@ namespace SRPGSysImp
             {
                 _processGuard++;
                 ProcessGuard();
+                UpdateUnitReadiness();
                 ProcessUnitTurn();
             }
         }
