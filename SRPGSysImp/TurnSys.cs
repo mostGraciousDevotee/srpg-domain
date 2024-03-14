@@ -1,7 +1,7 @@
 ﻿using Entity;
 using SRPGSys;
 
-namespace SRPGSysImp
+namespace TurnSystem
 {
     public class TurnSys : ITurnSys
     {

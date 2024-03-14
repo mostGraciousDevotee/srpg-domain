@@ -13,10 +13,14 @@ class Program
 
         var turnSysTest = new TurnSysTest();
 
+        var positionTest = new PositionTest();
+
         testRunner.AddTest(unitTest);
         testRunner.AddTest(readinessTest);
 
         testRunner.AddTest(turnSysTest);
+
+        testRunner.AddTest(positionTest);
         
         testRunner.Run();
     }
