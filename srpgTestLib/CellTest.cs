@@ -1,3 +1,4 @@
+using Entity;
 using EntityImp;
 
 namespace Test
@@ -8,10 +9,35 @@ namespace Test
         {
             int id = 1;
             string name = "Adam";
+            var expectedUnit = new Unit(id, name);
+            IUnit? resultUnit;
 
-            
-            
-            return false;
+            var origin = new Position(0, 0);
+            var cell = new Cell(origin);
+
+            cell.AddUnit(expectedUnit);
+            resultUnit = cell.GetUnit();
+
+            bool correctUnit = Assert.AreEqualRef<IUnit>
+            (
+                expectedUnit,
+                resultUnit!,
+                ErrorMessage + " at correct unit!"
+            );
+
+            cell.RemoveUnit();
+
+            resultUnit = cell.GetUnit();
+
+            bool unitRemoved = Assert.AreEqualRef<IUnit>
+            (
+                null!,
+                resultUnit!,
+                ErrorMessage + " at unit removed!"
+            );
+
+            return correctUnit &&
+                unitRemoved;
         }
     }
 }
