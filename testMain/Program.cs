@@ -15,6 +15,7 @@ class Program
 
         var positionTest = new PositionTest();
         var cellTest = new CellTest();
+        var squareCellsTest = new SquareCellTest();
 
         testRunner.AddTest(unitTest);
         testRunner.AddTest(readinessTest);
@@ -23,6 +24,7 @@ class Program
 
         testRunner.AddTest(positionTest);
         testRunner.AddTest(cellTest);
+        testRunner.AddTest(squareCellsTest);
         
         testRunner.Run();
     }

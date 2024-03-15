@@ -39,6 +39,17 @@ namespace EntityImp
             _cells[pos.x, pos.y].AddUnit(unit);
         }
 
+        public IUnit? GetUnit(Position pos)
+        {
+            return _cells[pos.x, pos.y].GetUnit();
+        }
+
+        public void RemoveUnit(IUnit unit)
+        {
+            var pos = unit.GetComponent<IMoveable>().Position;
+            _cells[pos.x, pos.y].RemoveUnit();
+        }
+
         public bool IsInside(Position pos)
         {
             bool insideHorizontally = pos.x >= 0 && pos.x < _width;

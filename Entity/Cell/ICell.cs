@@ -6,7 +6,7 @@ namespace Entity
         bool IsOccupied {get; }
 
         void AddUnit(IUnit unit);
-        void RemoveUnit();
         IUnit? GetUnit();
+        void RemoveUnit();
     }
 }
