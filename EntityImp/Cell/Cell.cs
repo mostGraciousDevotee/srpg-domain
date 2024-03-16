@@ -4,15 +4,15 @@ namespace EntityImp
 {
     public class Cell : ICell
     {
-        readonly Position _position;
+        readonly Vector2Int _position;
         IUnit? _unit;
 
-        public Cell(Position position)
+        public Cell(Vector2Int position)
         {
             _position = position;
         }
         
-        public Position Position => _position;
+        public Vector2Int Position => _position;
         public bool IsOccupied => _unit != null;
         
         public void AddUnit(IUnit unit)

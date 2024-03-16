@@ -7,10 +7,10 @@ namespace Test
     {
         public override bool Test()
         {
-            var origin = new Position(0, 0);
-            var oneZero = new Position(1, 0);
-            var limit = new Position(32, 32);
-            var negative = new Position(-1, 0);
+            var origin = new Vector2Int(0, 0);
+            var oneZero = new Vector2Int(1, 0);
+            var limit = new Vector2Int(32, 32);
+            var negative = new Vector2Int(-1, 0);
             
             var expectedUnit = new Unit(1, "Adam");
             

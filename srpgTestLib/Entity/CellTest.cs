@@ -12,7 +12,7 @@ namespace Test
             var expectedUnit = new Unit(id, name);
             IUnit? resultUnit;
 
-            var origin = new Position(0, 0);
+            var origin = new Vector2Int(0, 0);
             var cell = new Cell(origin);
 
             cell.AddUnit(expectedUnit);

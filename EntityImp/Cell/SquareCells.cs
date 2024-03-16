@@ -22,7 +22,7 @@ namespace EntityImp
             {
                 for (int y = 0; y < length; y++)
                 {
-                    _cells[x, y] = new Cell(new Position(x, y));
+                    _cells[x, y] = new Cell(new Vector2Int(x, y));
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace EntityImp
             _cells[pos.x, pos.y].AddUnit(unit);
         }
 
-        public IUnit? GetUnit(Position pos)
+        public IUnit? GetUnit(Vector2Int pos)
         {
             return _cells[pos.x, pos.y].GetUnit();
         }
@@ -50,7 +50,7 @@ namespace EntityImp
             _cells[pos.x, pos.y].RemoveUnit();
         }
 
-        public bool IsInside(Position pos)
+        public bool IsInside(Vector2Int pos)
         {
             bool insideHorizontally = pos.x >= 0 && pos.x < _width;
             bool insideVertically = pos.y >= 0 && pos.y < _length;
@@ -58,7 +58,7 @@ namespace EntityImp
             return insideHorizontally && insideVertically;
         }
 
-        public bool IsOccupied(Position pos)
+        public bool IsOccupied(Vector2Int pos)
         {
             return _cells[pos.x, pos.y].IsOccupied;
         }

@@ -6,9 +6,9 @@ namespace EntityImp
     {
         int _moveRange;
         int _currentMoveRange;
-        Position _position;
+        Vector2Int _position;
 
-        public Moveable(int moveRange, Position position)
+        public Moveable(int moveRange, Vector2Int position)
         {
             _moveRange = moveRange;
             _currentMoveRange = moveRange;
@@ -17,9 +17,9 @@ namespace EntityImp
         
         public int MoveRange => _moveRange;
         public int CurrentMoveRange => _currentMoveRange;
-        public Position Position => _position;
+        public Vector2Int Position => _position;
 
-        public void Move(Position position, int moveRange)
+        public void Move(Vector2Int position, int moveRange)
         {
             _position = position;
             _currentMoveRange -= moveRange;

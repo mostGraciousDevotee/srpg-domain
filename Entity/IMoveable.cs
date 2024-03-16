@@ -4,9 +4,9 @@ namespace Entity
     {
         int MoveRange {get; }
         int CurrentMoveRange {get; }
-        Position Position {get; }
+        Vector2Int Position {get; }
 
-        void Move(Position position, int moveRange);
+        void Move(Vector2Int position, int moveRange);
         void Reset();
     }
 }

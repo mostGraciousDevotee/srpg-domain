@@ -13,7 +13,7 @@ namespace Test
             var adam = new Unit(id, name);
 
             var moveRange = 2;
-            var origin = new Position(0, 0);
+            var origin = new Vector2Int(0, 0);
             var adamMoveable = new Moveable(moveRange, origin);
 
             // TODO : Implement equality operatior for Position struct

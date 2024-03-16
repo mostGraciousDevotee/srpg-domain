@@ -2,7 +2,7 @@ namespace Entity
 {
     public interface ICell
     {
-        Position Position {get; }
+        Vector2Int Position {get; }
         bool IsOccupied {get; }
 
         void AddUnit(IUnit unit);

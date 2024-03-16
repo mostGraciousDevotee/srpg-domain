@@ -6,9 +6,9 @@ namespace Test
     {
         public override bool Test()
         {
-            var origin = new Position(0, 0);
-            var origin2 = new Position(0, 0);
-            var oneZero = new Position(1, 0);
+            var origin = new Vector2Int(0, 0);
+            var origin2 = new Vector2Int(0, 0);
+            var oneZero = new Vector2Int(1, 0);
 
             bool trueEquality = Assert.AreEqual<bool>
             (

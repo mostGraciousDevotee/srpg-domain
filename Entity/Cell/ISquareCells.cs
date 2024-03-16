@@ -7,10 +7,10 @@ namespace Entity
         int CellSize {get; }
 
         void AddUnit(IUnit unit);
-        IUnit? GetUnit(Position position);
+        IUnit? GetUnit(Vector2Int position);
         void RemoveUnit(IUnit unit);
 
-        bool IsInside(Position position);
-        bool IsOccupied(Position position);
+        bool IsInside(Vector2Int position);
+        bool IsOccupied(Vector2Int position);
     }
 }
