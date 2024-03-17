@@ -38,7 +38,7 @@ namespace Test
             bool firstTurn = Assert.AreEqual<int>
             (
                 bruceID,
-                bruce.ID,
+                _unitID,
                 ErrorMessage + " at bruceID on start of turn"
             );
 
@@ -47,7 +47,7 @@ namespace Test
             bool secondTurn = Assert.AreEqual<int>
             (
                 adamID,
-                adam.ID,
+                _unitID,
                 ErrorMessage + " at adamID on second turn"
             );
             
@@ -56,7 +56,7 @@ namespace Test
         }
 
         void OnUnitActive(int id, string unitName)
-        {
+        {   
             _unitID = id;
             _unitName = unitName;
         }

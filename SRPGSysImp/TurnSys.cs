@@ -38,7 +38,7 @@ namespace TurnSystem
                 _processGuard = 0;
                 _currentUnit = _unitQueue.Dequeue();
 
-                // TODO:  Notify UI for active unit;
+                UnitActive?.Invoke(_currentUnit.ID, _currentUnit.Name);
             }
             else
             {
