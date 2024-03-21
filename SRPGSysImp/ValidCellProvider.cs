@@ -1,5 +1,5 @@
 using Entity;
-using SRPGSys;
+using CellSystem;
 
 namespace SRPGSysImp
 {
@@ -20,12 +20,12 @@ namespace SRPGSysImp
         public List<Vector2Int> GetValidCells(Vector2Int startPos, int range)
         {
             Reset();
-            var _currentPos = startPos;
 
+            var currentPos = startPos;
             var validCells = new List<Vector2Int>();
 
-            EnqueueCurrentNeighboursOf(_currentPos);
-            _visitedCells.Add(_currentPos);
+            EnqueueCurrentNeighboursOf(currentPos);
+            _visitedCells.Add(currentPos);
 
             while (range > 0)
             {

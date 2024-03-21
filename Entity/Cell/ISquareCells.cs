@@ -2,6 +2,8 @@ namespace Entity
 {
     public interface ISquareCells
     {
+        event Action<IUnit>? UnitAdded;
+        
         int Width {get; }
         int Length {get; }
         int CellSize {get; }

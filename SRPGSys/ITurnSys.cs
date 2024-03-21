@@ -1,6 +1,6 @@
 ﻿using Entity;
 
-namespace SRPGSys
+namespace TurnSystemImp
 {
     public interface ITurnSys
     {

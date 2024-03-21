@@ -26,6 +26,8 @@ namespace EntityImp
                 }
             }
         }
+
+        public event Action<IUnit>? UnitAdded;
         
         public int Width => _width;
 
@@ -37,6 +39,8 @@ namespace EntityImp
         {
             var pos = unit.GetComponent<IMoveable>().Position;
             _cells[pos.x, pos.y].AddUnit(unit);
+
+            UnitAdded?.Invoke(unit);
         }
 
         public IUnit? GetUnit(Vector2Int pos)

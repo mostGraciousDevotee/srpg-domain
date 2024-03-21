@@ -1,6 +1,6 @@
 using Entity;
 
-namespace SRPGSys
+namespace CellSystem
 {
     public interface IValidCellProvider
     {
